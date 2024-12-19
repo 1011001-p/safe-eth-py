@@ -199,7 +199,7 @@ class TestTransactionServiceAPI(EthereumTestCaseMixin, TestCase):
             message_hash = self.transaction_service_api.create_delegate_message_hash(
                 delegate_address
             )
-            signature = delegator_account.unsafe_sign_hash(message_hash).signature.hex()
+            signature = delegator_account.signHash(message_hash).signature.hex()
             self.transaction_service_api.remove_delegate(
                 delegate_address, delegator_account.address, signature
             )
@@ -232,7 +232,7 @@ class TestTransactionServiceAPI(EthereumTestCaseMixin, TestCase):
             message_hash = self.transaction_service_api.create_delegate_message_hash(
                 delegate_address
             )
-            signature = delegator_account.unsafe_sign_hash(message_hash).signature.hex()
+            signature = delegator_account.signHash(message_hash).signature.hex()
             label = "test label"
             self.transaction_service_api.add_delegate(
                 delegate_address, delegator_account.address, label, signature
