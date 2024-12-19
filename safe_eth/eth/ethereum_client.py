@@ -1938,7 +1938,7 @@ class EthereumClient:
                         "Sending %d wei from %s to %s", tx["value"], address, tx["to"]
                     )
                     try:
-                        return self.send_raw_transaction(signed_tx.raw_Transaction)
+                        return self.send_raw_transaction(signed_tx.raw_transaction)
                     except TransactionAlreadyImported as e:
                         # Sometimes Parity 2.2.11 fails with Transaction already imported, even if it's not, but it's
                         # processed
